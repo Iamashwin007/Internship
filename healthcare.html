@@ -3,660 +3,1565 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MediCare Plus - Premium Healthcare</title>
-
+<title>Meridian Health — Your Health, Our Absolute Priority</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
+/* ============================================= */
+/* 1. ROOT VARIABLES & RESET                      */
+/* ============================================= */
 :root{
-    --primary:#0b3c5d;
-    --secondary:#14b8c4;
-    --accent:#0ea5e9;
-    --light:#f5f8fb;
-    --white:#ffffff;
-    --dark:#1f2937;
-    --gray:#6b7280;
-    --border:#e5e7eb;
-    --success:#22c55e;
-    --warning:#f59e0b;
+  /* Color */
+  --navy-950:#0B1E33;
+  --navy-800:#122B47;
+  --navy-700:#1A3A5C;
+  --teal-500:#0EA5A8;
+  --teal-600:#0C8C8F;
+  --teal-100:#E3F6F4;
+  --gray-50:#F7F8FA;
+  --gray-100:#EEF1F4;
+  --gray-300:#D7DEE5;
+  --gray-500:#7C8A9B;
+  --ink:#1C2B3A;
+  --white:#FFFFFF;
+  --amber-500:#F59E0B;
+  --amber-100:#FEF3E0;
+  --green-600:#16A34A;
+  --green-100:#E7F7ED;
 
-    --radius:14px;
-    --shadow:0 10px 30px rgba(0,0,0,0.08);
-    --transition:all .3s ease;
-    --container:1200px;
+  /* Type */
+  --font-display:'Fraunces', Georgia, serif;
+  --font-body:'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:'JetBrains Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:.5rem;
+  --space-sm:1rem;
+  --space-md:1.5rem;
+  --space-lg:2.5rem;
+  --space-xl:4rem;
+  --space-2xl:6rem;
+
+  /* Layout */
+  --container-w:1240px;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+
+  /* Motion */
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:.18s var(--ease);
+  --t-med:.32s var(--ease);
+
+  /* Shadow */
+  --shadow-sm:0 1px 2px rgba(11,30,51,.06), 0 1px 1px rgba(11,30,51,.04);
+  --shadow-md:0 8px 24px -8px rgba(11,30,51,.14);
+  --shadow-lg:0 24px 48px -16px rgba(11,30,51,.22);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
 }
 
 body{
-    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-    color:var(--dark);
-    background:var(--white);
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--gray-50);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+input,select,textarea{font-family:inherit;font-size:1rem;}
+
 .container{
-    width:90%;
-    max-width:var(--container);
-    margin:auto;
+  width:100%;
+  max-width:var(--container-w);
+  margin:0 auto;
+  padding:0 var(--space-md);
 }
 
 section{
-    padding:90px 0;
+  padding:var(--space-2xl) 0;
 }
 
 h1,h2,h3,h4{
-    line-height:1.2;
+  font-family:var(--font-display);
+  font-weight:600;
+  color:var(--navy-950);
+  line-height:1.15;
+  letter-spacing:-.01em;
 }
 
-img{
-    max-width:100%;
+:focus-visible{
+  outline:3px solid var(--teal-500);
+  outline-offset:3px;
+  border-radius:4px;
 }
 
-a{
-    text-decoration:none;
+/* Eyebrow label — used sparingly as section identifiers */
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--teal-600);
+  margin-bottom:var(--space-sm);
+}
+.eyebrow::before{
+  content:'';
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--teal-500);
+  box-shadow:0 0 0 3px var(--teal-100);
 }
 
-ul{
-    list-style:none;
+.section-head{
+  max-width:640px;
+  margin-bottom:var(--space-xl);
+}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head p{color:var(--gray-500);font-size:1.05rem;margin-top:var(--space-sm);}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  font-weight:600;
+  font-size:.95rem;
+  padding:.85rem 1.7rem;
+  border-radius:var(--radius-sm);
+  transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--teal-500);
+  color:var(--white);
+  box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover{
+  background:var(--teal-600);
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-md);
+}
+.btn-outline{
+  background:transparent;
+  color:var(--navy-950);
+  border:1.5px solid var(--gray-300);
+}
+.btn-outline:hover{
+  border-color:var(--navy-950);
+  transform:translateY(-2px);
+}
+.btn-emergency{
+  background:var(--navy-950);
+  color:var(--white);
+  border:1.5px solid var(--navy-950);
+}
+.btn-emergency:hover{
+  background:var(--ink);
+  box-shadow:var(--shadow-md);
+}
+.btn-light{
+  background:var(--white);
+  color:var(--navy-950);
+}
+.btn-light:hover{
+  background:var(--teal-100);
+  transform:translateY(-2px);
+}
+.btn-sm{padding:.55rem 1.15rem;font-size:.85rem;}
+.btn-block{width:100%;}
+
+/* Vital line divider — signature motif, used once per section seam */
+.vital-divider{
+  width:100%;
+  height:32px;
+  overflow:hidden;
+  line-height:0;
+}
+.vital-divider svg{
+  width:100%;
+  height:32px;
+  display:block;
 }
 
-/* HEADER */
-
-header{
-    background:var(--white);
-    position:sticky;
-    top:0;
-    z-index:999;
-    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+/* ============================================= */
+/* 2. HEADER / NAVBAR                             */
+/* ============================================= */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--gray-100);
 }
-
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1rem var(--space-md);
+  max-width:var(--container-w);
+  margin:0 auto;
+  gap:var(--space-md);
 }
-
-.logo{
-    font-size:1.8rem;
-    font-weight:700;
-    color:var(--primary);
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.35rem;
+  color:var(--navy-950);
+  flex-shrink:0;
 }
-
-.logo span{
-    color:var(--secondary);
+.brand-mark{
+  width:34px;height:34px;
+  border-radius:9px;
+  background:var(--navy-950);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
 }
+.brand-mark svg{width:18px;height:18px;}
 
 .nav-links{
-    display:flex;
-    gap:28px;
+  display:flex;
+  align-items:center;
+  gap:var(--space-lg);
 }
-
 .nav-links a{
-    color:var(--dark);
-    font-weight:500;
-    transition:var(--transition);
+  position:relative;
+  font-size:.95rem;
+  font-weight:500;
+  color:var(--navy-800);
+  padding:.4rem .1rem;
+  transition:color var(--t-fast);
 }
-
-.nav-links a:hover{
-    color:var(--secondary);
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-2px;
+  width:0%;height:2px;
+  background:var(--teal-500);
+  transition:width var(--t-med);
 }
+.nav-links a:hover{color:var(--teal-600);}
+.nav-links a:hover::after{width:100%;}
 
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    transition:var(--transition);
-    font-weight:600;
-}
-
-.btn-primary{
-    background:var(--secondary);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:var(--primary);
-    transform:translateY(-3px);
-}
-
-.mobile-toggle{
-    display:none;
+.nav-cta{display:flex;align-items:center;gap:var(--space-sm);flex-shrink:0;}
+.nav-cta .phone-tag{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  color:var(--gray-500);
+  display:none;
 }
 
 .hamburger{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  width:26px;
+  padding:6px 0;
+  background:none;
+}
+.hamburger span{
+  display:block;
+  height:2px;
+  width:100%;
+  background:var(--navy-950);
+  border-radius:2px;
+  transition:transform var(--t-med), opacity var(--t-med);
 }
 
-/* HERO */
-
-.hero{
-    background:linear-gradient(135deg,#f5fbff,#eef8fa);
-}
-
-.hero-content{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:50px;
-}
-
-.hero h1{
-    font-size:3.5rem;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.1rem;
-    color:var(--gray);
-    margin-bottom:30px;
-}
-
-.hero-image{
-    height:450px;
-    border-radius:20px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:1.4rem;
-    box-shadow:var(--shadow);
-}
-
-/* SECTION TITLES */
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:2.5rem;
-    color:var(--primary);
-    margin-bottom:12px;
-}
-
-.section-title p{
-    color:var(--gray);
-}
-
-/* ABOUT */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.about-image{
-    height:400px;
-    background:#dceef7;
-    border-radius:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--primary);
-    font-weight:600;
-}
-
-.about-content h3{
-    font-size:2rem;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.about-content p{
-    color:var(--gray);
-    margin-bottom:20px;
-}
-
-.check-list li{
-    margin-bottom:12px;
-    font-weight:500;
-}
-
-.check-list li::before{
-    content:"✓";
-    color:var(--success);
-    margin-right:10px;
-}
-
-/* SERVICES */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.service-card{
-    background:white;
-    padding:30px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    transition:var(--transition);
-}
-
-.service-card:hover{
-    transform:translateY(-8px);
-}
-
-.service-icon{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    background:#e6fbfd;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:20px;
-    font-size:30px;
-    color:var(--secondary);
-}
-
-.service-card h3{
-    margin-bottom:12px;
-    color:var(--primary);
-}
-
-.service-card p{
-    color:var(--gray);
-}
-
-/* DOCTORS */
-
-.doctors-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.doctor-card{
-    background:white;
-    padding:25px;
-    border-radius:var(--radius);
-    text-align:center;
-    box-shadow:var(--shadow);
-    transition:var(--transition);
-}
-
-.doctor-card:hover{
-    transform:translateY(-6px);
-}
-
-.doctor-img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:#d7eef6;
-    margin:auto;
-    margin-bottom:20px;
-}
-
-.doctor-card h3{
-    color:var(--primary);
-}
-
-.doctor-card p{
-    color:var(--gray);
-    margin:10px 0 20px;
-}
-
-.btn-outline{
-    border:2px solid var(--secondary);
-    color:var(--secondary);
-    background:transparent;
-}
-
-.btn-outline:hover{
-    background:var(--secondary);
-    color:white;
-}
-
-/* DEPARTMENTS */
-
-.departments{
-    background:var(--light);
-}
-
-.department-list{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.department-item{
-    background:white;
-    padding:25px;
-    border-left:5px solid var(--secondary);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-}
-
-.department-item h4{
-    color:var(--primary);
-    margin-bottom:10px;
-}
-
-/* APPOINTMENT */
-
-.appointment-wrapper{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-input,
-select,
-textarea{
-    width:100%;
-    padding:14px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    outline:none;
-    transition:var(--transition);
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:var(--secondary);
-}
-
-textarea{
-    min-height:140px;
-    resize:vertical;
-}
-
-.full-width{
-    grid-column:1/-1;
-}
-
-/* TABLE */
-
-.table-wrapper{
-    overflow-x:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:700px;
-}
-
-th{
-    background:var(--primary);
-    color:white;
-}
-
-th,td{
-    padding:16px;
-    border:1px solid var(--border);
-    text-align:left;
-}
-
-.badge{
-    padding:6px 14px;
-    border-radius:30px;
-    color:white;
-    font-size:.85rem;
-}
-
-.completed{
-    background:var(--success);
-}
-
-.pending{
-    background:var(--warning);
-}
-
-/* TESTIMONIALS */
-
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.testimonial-card{
-    background:white;
-    padding:30px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-}
-
-blockquote{
-    color:var(--gray);
-    margin-bottom:20px;
-}
-
-.stars{
-    color:#fbbf24;
-    margin-top:10px;
-}
-
-/* CONTACT */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-.contact-info{
-    background:white;
-    padding:30px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-}
-
-.map-placeholder{
-    height:350px;
-    border-radius:20px;
-    background:#d9edf7;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--primary);
-    font-weight:600;
-}
-
-/* FOOTER */
-
-footer{
-    background:#0f172a;
-    color:white;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-    padding:70px 0 40px;
-}
-
-.footer-grid h3{
-    margin-bottom:20px;
-}
-
-.footer-grid ul li{
-    margin-bottom:10px;
-}
-
-.footer-grid a{
-    color:#d1d5db;
-}
-
-.footer-grid a:hover{
-    color:white;
-}
-
-.newsletter{
-    display:flex;
+/* CSS-only mobile menu using checkbox hack */
+.menu-toggle{display:none;}
+
+@media (max-width:900px){
+  .nav-links{
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:var(--white);
     flex-direction:column;
-    gap:10px;
+    align-items:flex-start;
+    gap:0;
+    padding:0 var(--space-md);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height var(--t-med);
+    border-bottom:1px solid var(--gray-100);
+    box-shadow:var(--shadow-md);
+  }
+  .nav-links a{
+    width:100%;
+    padding:.85rem 0;
+    border-bottom:1px solid var(--gray-100);
+  }
+  .nav-cta .phone-tag{display:none !important;}
+  .hamburger{display:flex;}
+  .menu-toggle:checked ~ .nav-links{
+    max-height:420px;
+    padding:.5rem var(--space-md) 1rem;
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle:checked ~ .hamburger span:nth-child(2){opacity:0;}
+  .menu-toggle:checked ~ .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
+
+@media (min-width:901px){
+  .nav-cta .phone-tag{display:inline;}
+}
+
+/* ============================================= */
+/* 3. HERO SECTION                                */
+/* ============================================= */
+.hero{
+  background:var(--navy-950);
+  background-image:radial-gradient(circle at 85% 20%, rgba(14,165,168,.22), transparent 55%);
+  padding:var(--space-2xl) 0;
+  overflow:hidden;
+}
+.hero .container{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:var(--space-xl);
+  align-items:center;
+}
+.hero-copy .eyebrow{color:var(--teal-500);}
+.hero-copy .eyebrow::before{box-shadow:0 0 0 3px rgba(14,165,168,.25);}
+.hero-copy h1{
+  font-size:clamp(2.3rem, 4vw, 3.4rem);
+  color:var(--white);
+  margin-bottom:var(--space-md);
+}
+.hero-copy h1 em{
+  font-style:normal;
+  color:var(--teal-500);
+}
+.hero-copy p{
+  color:#AAB9C9;
+  font-size:1.1rem;
+  max-width:520px;
+  margin-bottom:var(--space-lg);
+}
+.hero-actions{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin-bottom:var(--space-lg);}
+
+.hero-stats{
+  display:flex;
+  gap:var(--space-xl);
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:var(--space-md);
+}
+.hero-stats div strong{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:1.7rem;
+  color:var(--white);
+  font-weight:600;
+}
+.hero-stats div span{
+  font-size:.82rem;
+  color:#8FA0B3;
+}
+
+/* Hero visual: vitals instrument panel */
+.vitals-panel{
+  background:var(--navy-800);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-lg);
+  padding:var(--space-lg);
+  box-shadow:var(--shadow-lg);
+  position:relative;
+}
+.vitals-panel-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:var(--space-md);
+  padding-bottom:var(--space-md);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.vitals-panel-head span{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:#8FA0B3;
+  letter-spacing:.05em;
+}
+.live-dot{
+  display:inline-flex;align-items:center;gap:.4rem;
+  color:var(--teal-500);
+  font-family:var(--font-mono);
+  font-size:.75rem;
+}
+.live-dot::before{
+  content:'';
+  width:7px;height:7px;border-radius:50%;
+  background:var(--teal-500);
+  animation:pulse-dot 1.8s infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1;}
+  50%{opacity:.35;}
+}
+.vitals-wave{
+  width:100%;height:90px;
+  margin-bottom:var(--space-md);
+}
+.vitals-readouts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--space-sm);
+}
+.readout{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-sm);
+  padding:.9rem .7rem;
+}
+.readout span{
+  display:block;
+  font-size:.7rem;
+  color:#8FA0B3;
+  letter-spacing:.04em;
+  margin-bottom:.3rem;
+}
+.readout strong{
+  font-family:var(--font-mono);
+  font-size:1.25rem;
+  color:var(--white);
+  font-weight:600;
+}
+.readout strong.ok{color:var(--teal-500);}
+
+/* ============================================= */
+/* 4. ABOUT SECTION                               */
+/* ============================================= */
+.about .container{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:var(--space-xl);
+  align-items:center;
+}
+.about-visual{
+  background:var(--teal-100);
+  border-radius:var(--radius-lg);
+  padding:var(--space-lg);
+  position:relative;
+}
+.about-visual-inner{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  padding:var(--space-lg);
+  box-shadow:var(--shadow-md);
+}
+.experience-badge{
+  position:absolute;
+  bottom:-1.25rem;right:-1.25rem;
+  background:var(--navy-950);
+  color:var(--white);
+  border-radius:var(--radius-md);
+  padding:1.1rem 1.4rem;
+  box-shadow:var(--shadow-lg);
+  text-align:center;
+}
+.experience-badge strong{
+  display:block;
+  font-family:var(--font-display);
+  font-size:2.1rem;
+  color:var(--teal-500);
+}
+.experience-badge span{
+  font-size:.72rem;
+  color:#AAB9C9;
+  letter-spacing:.04em;
+}
+.about-visual-inner h4{font-size:1.05rem;margin-bottom:.5rem;}
+.about-visual-inner p{color:var(--gray-500);font-size:.92rem;}
+
+.about-copy h2{font-size:clamp(1.9rem,3vw,2.5rem);margin-bottom:var(--space-sm);}
+.about-copy > p{color:var(--gray-500);margin-bottom:var(--space-lg);max-width:540px;}
+.check-list{display:grid;gap:var(--space-sm);}
+.check-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:.85rem;
+  padding:var(--space-sm);
+  background:var(--white);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--gray-100);
+  transition:border-color var(--t-fast), transform var(--t-fast);
+}
+.check-list li:hover{border-color:var(--teal-500);transform:translateX(4px);}
+.check-icon{
+  flex-shrink:0;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--teal-100);
+  color:var(--teal-600);
+  display:flex;align-items:center;justify-content:center;
+}
+.check-list h5{font-family:var(--font-body);font-size:.98rem;font-weight:600;color:var(--navy-950);margin-bottom:.15rem;}
+.check-list p{font-size:.88rem;color:var(--gray-500);margin:0;}
+
+/* ============================================= */
+/* 5. SERVICES GRID                               */
+/* ============================================= */
+.services{background:var(--white);}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--space-md);
+}
+.service-card{
+  background:var(--gray-50);
+  border:1px solid var(--gray-100);
+  border-radius:var(--radius-md);
+  padding:var(--space-lg) var(--space-md);
+  transition:transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med), background var(--t-med);
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-md);
+  border-color:transparent;
+  background:var(--white);
+}
+.service-icon{
+  width:52px;height:52px;
+  border-radius:var(--radius-sm);
+  background:var(--navy-950);
+  color:var(--teal-500);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:var(--space-md);
+  transition:background var(--t-med);
+}
+.service-card:hover .service-icon{background:var(--teal-500);color:var(--white);}
+.service-card h3{font-size:1.15rem;margin-bottom:.5rem;}
+.service-card p{font-size:.9rem;color:var(--gray-500);margin-bottom:var(--space-sm);}
+.service-link{
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--teal-600);
+  display:inline-flex;
+  align-items:center;
+  gap:.3rem;
+  transition:gap var(--t-fast);
+}
+.service-card:hover .service-link{gap:.55rem;}
+
+/* ============================================= */
+/* 6. DOCTORS SECTION                             */
+/* ============================================= */
+.doctors-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--space-md);
+}
+.doctor-card{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  border:1px solid var(--gray-100);
+  transition:box-shadow var(--t-med), transform var(--t-med);
+}
+.doctor-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.doctor-photo{
+  height:220px;
+  background:linear-gradient(155deg, var(--teal-100), var(--gray-100));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--teal-600);
+  position:relative;
+}
+.doctor-photo svg{width:64px;height:64px;opacity:.55;}
+.doctor-status{
+  position:absolute;
+  top:.85rem;right:.85rem;
+  background:var(--white);
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  padding:.25rem .55rem;
+  border-radius:99px;
+  color:var(--green-600);
+  display:flex;align-items:center;gap:.3rem;
+  box-shadow:var(--shadow-sm);
+}
+.doctor-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green-600);}
+.doctor-info{padding:var(--space-md);}
+.doctor-info h3{font-size:1.05rem;margin-bottom:.15rem;}
+.doctor-specialty{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--teal-600);
+  letter-spacing:.02em;
+  margin-bottom:.85rem;
+  display:block;
+}
+.doctor-info .btn{width:100%;}
+
+/* ============================================= */
+/* 7. DEPARTMENTS                                 */
+/* ============================================= */
+.departments{background:var(--navy-950);color:var(--white);}
+.departments .section-head h2{color:var(--white);}
+.departments .section-head p{color:#AAB9C9;}
+.departments .eyebrow{color:var(--teal-500);}
+.departments .eyebrow::before{box-shadow:0 0 0 3px rgba(14,165,168,.25);}
+
+.dept-list{
+  display:grid;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.dept-row{
+  display:grid;
+  grid-template-columns:90px 1fr 1.4fr 140px;
+  align-items:center;
+  gap:var(--space-md);
+  padding:1.4rem 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  transition:background var(--t-fast);
+}
+.dept-row:hover{background:rgba(255,255,255,.04);}
+.dept-num{
+  font-family:var(--font-mono);
+  color:var(--teal-500);
+  font-size:.85rem;
+}
+.dept-row h3{color:var(--white);font-size:1.15rem;}
+.dept-row p{color:#8FA0B3;font-size:.92rem;margin:0;}
+.dept-row .btn{justify-self:end;}
+
+/* ============================================= */
+/* 8. APPOINTMENT FORM                            */
+/* ============================================= */
+.appointment{
+  background:var(--teal-100);
+}
+.appointment-wrap{
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  overflow:hidden;
+}
+.appointment-aside{
+  background:var(--navy-950);
+  background-image:radial-gradient(circle at 20% 90%, rgba(14,165,168,.25), transparent 55%);
+  color:var(--white);
+  padding:var(--space-xl) var(--space-lg);
+}
+.appointment-aside h2{color:var(--white);font-size:1.9rem;margin-bottom:var(--space-sm);}
+.appointment-aside p{color:#AAB9C9;font-size:.95rem;margin-bottom:var(--space-lg);}
+.aside-point{display:flex;gap:.85rem;margin-bottom:var(--space-md);align-items:flex-start;}
+.aside-point .check-icon{background:rgba(14,165,168,.2);color:var(--teal-500);}
+.aside-point h5{color:var(--white);font-size:.95rem;margin-bottom:.15rem;}
+.aside-point p{color:#8FA0B3;font-size:.85rem;margin:0;}
+
+.appointment-form{padding:var(--space-xl) var(--space-lg);}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--space-md);
+}
+.form-field{display:flex;flex-direction:column;gap:.45rem;}
+.form-field.full{grid-column:1 / -1;}
+.form-field label{font-size:.82rem;font-weight:600;color:var(--navy-800);}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  border:1.5px solid var(--gray-300);
+  border-radius:var(--radius-sm);
+  padding:.78rem .9rem;
+  background:var(--gray-50);
+  color:var(--ink);
+  transition:border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+}
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover{border-color:var(--gray-500);}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  outline:none;
+  border-color:var(--teal-500);
+  background:var(--white);
+  box-shadow:0 0 0 4px var(--teal-100);
+}
+.form-field textarea{resize:vertical;min-height:100px;font-family:inherit;}
+.form-submit{margin-top:var(--space-md);}
+.form-submit .btn{padding:.95rem 2rem;}
+
+/* ============================================= */
+/* 9. PATIENT RECORDS TABLE                       */
+/* ============================================= */
+.records-panel{
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  border:1px solid var(--gray-100);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+.records-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:var(--space-sm);
+  padding:var(--space-md) var(--space-lg);
+  border-bottom:1px solid var(--gray-100);
+}
+.records-head h3{font-size:1.2rem;}
+.records-head .live-dot{color:var(--teal-600);}
+.records-head .live-dot::before{background:var(--teal-600);}
+
+.table-scroll{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+table.records{
+  width:100%;
+  border-collapse:collapse;
+  min-width:640px;
+}
+table.records th{
+  text-align:left;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gray-500);
+  padding:.9rem var(--space-lg);
+  background:var(--gray-50);
+  border-bottom:1px solid var(--gray-100);
+  white-space:nowrap;
+}
+table.records td{
+  padding:1rem var(--space-lg);
+  border-bottom:1px solid var(--gray-100);
+  font-size:.92rem;
+  white-space:nowrap;
+}
+table.records tbody tr{transition:background var(--t-fast);}
+table.records tbody tr:hover{background:var(--gray-50);}
+table.records tbody tr:last-child td{border-bottom:none;}
+.patient-id{font-family:var(--font-mono);color:var(--gray-500);font-size:.85rem;}
+.patient-name{display:flex;align-items:center;gap:.7rem;font-weight:600;color:var(--navy-950);}
+.avatar-dot{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--teal-100);
+  color:var(--teal-600);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);
+  font-size:.78rem;font-weight:600;
+  flex-shrink:0;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.78rem;
+  font-weight:600;
+  padding:.32rem .75rem;
+  border-radius:99px;
+}
+.pill::before{content:'';width:6px;height:6px;border-radius:50%;}
+.pill-completed{background:var(--green-100);color:var(--green-600);}
+.pill-completed::before{background:var(--green-600);}
+.pill-pending{background:var(--amber-100);color:var(--amber-500);}
+.pill-pending::before{background:var(--amber-500);}
+.pill-scheduled{background:var(--teal-100);color:var(--teal-600);}
+.pill-scheduled::before{background:var(--teal-600);}
+
+/* ============================================= */
+/* 10. TESTIMONIALS                               */
+/* ============================================= */
+.testimonials{background:var(--navy-950);color:var(--white);}
+.testimonials .eyebrow{color:var(--teal-500);}
+.testimonials .eyebrow::before{box-shadow:0 0 0 3px rgba(14,165,168,.25);}
+.testimonials .section-head h2{color:var(--white);}
+.testimonials .section-head p{color:#AAB9C9;}
+
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--space-md);
+}
+.testi-card{
+  background:var(--navy-800);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-md);
+  padding:var(--space-lg);
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-md);
+}
+.stars{display:flex;gap:.2rem;color:var(--teal-500);}
+.stars svg{width:16px;height:16px;}
+.testi-card blockquote{
+  font-family:var(--font-display);
+  font-size:1.05rem;
+  font-weight:400;
+  font-style:italic;
+  color:#E7ECF1;
+  line-height:1.55;
+}
+.testi-author{display:flex;align-items:center;gap:.8rem;margin-top:auto;}
+.testi-author .avatar-dot{background:rgba(14,165,168,.18);color:var(--teal-500);width:38px;height:38px;}
+.testi-author strong{display:block;color:var(--white);font-size:.92rem;}
+.testi-author span{font-size:.78rem;color:#8FA0B3;}
+
+/* ============================================= */
+/* 11. CONTACT SECTION                            */
+/* ============================================= */
+.contact .container{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:var(--space-xl);
+}
+.contact-info{display:flex;flex-direction:column;gap:var(--space-md);}
+.contact-item{display:flex;gap:1rem;align-items:flex-start;}
+.contact-item .check-icon{background:var(--navy-950);color:var(--teal-500);border-radius:var(--radius-sm);width:44px;height:44px;flex-shrink:0;}
+.contact-item h5{font-size:.95rem;margin-bottom:.2rem;}
+.contact-item p{font-size:.9rem;color:var(--gray-500);margin:0;}
+
+.map-frame{
+  width:100%;
+  height:100%;
+  min-height:340px;
+  background:
+    linear-gradient(rgba(11,30,51,.05), rgba(11,30,51,.05)),
+    repeating-linear-gradient(0deg, rgba(11,30,51,.06) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(11,30,51,.06) 0 1px, transparent 1px 32px),
+    var(--teal-100);
+  border-radius:var(--radius-lg);
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--gray-300);
+}
+.map-pin{
+  background:var(--navy-950);
+  color:var(--white);
+  width:46px;height:46px;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-md);
+}
+.map-pin svg{transform:rotate(45deg);width:20px;height:20px;}
+.map-label{
+  position:absolute;
+  bottom:var(--space-md);
+  left:var(--space-md);
+  background:var(--white);
+  padding:.6rem .9rem;
+  border-radius:var(--radius-sm);
+  font-size:.82rem;
+  box-shadow:var(--shadow-sm);
+}
+
+/* ============================================= */
+/* 12. FOOTER                                     */
+/* ============================================= */
+.site-footer{
+  background:var(--navy-950);
+  color:#AAB9C9;
+  padding-top:var(--space-2xl);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1.3fr;
+  gap:var(--space-lg);
+  padding-bottom:var(--space-xl);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-brand .brand{color:var(--white);margin-bottom:var(--space-sm);}
+.footer-brand p{font-size:.9rem;line-height:1.7;max-width:300px;}
+.footer-col h4{color:var(--white);font-family:var(--font-body);font-size:.92rem;font-weight:600;margin-bottom:var(--space-md);}
+.footer-col ul{display:flex;flex-direction:column;gap:.7rem;}
+.footer-col a{font-size:.88rem;transition:color var(--t-fast);}
+.footer-col a:hover{color:var(--teal-500);}
+.newsletter-form{display:flex;gap:.5rem;margin-top:.5rem;}
+.newsletter-form input{
+  flex:1;
+  padding:.7rem .9rem;
+  border-radius:var(--radius-sm);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:var(--white);
+  font-size:.88rem;
+}
+.newsletter-form input::placeholder{color:#7C8A9B;}
+.newsletter-form input:focus{outline:none;border-color:var(--teal-500);background:rgba(255,255,255,.1);}
+.newsletter-form button{
+  background:var(--teal-500);
+  color:var(--white);
+  padding:.7rem 1rem;
+  border-radius:var(--radius-sm);
+  flex-shrink:0;
+  transition:background var(--t-fast);
+}
+.newsletter-form button:hover{background:var(--teal-600);}
 
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    padding:20px 0;
-    text-align:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:var(--space-sm);
+  padding:var(--space-md) 0 var(--space-lg);
+  font-size:.82rem;
+}
+.social-icons{display:flex;gap:.6rem;}
+.social-icons a{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+  transition:background var(--t-fast), transform var(--t-fast);
+}
+.social-icons a:hover{background:var(--teal-500);transform:translateY(-2px);}
+.social-icons svg{width:16px;height:16px;}
+
+/* ============================================= */
+/* 13. RESPONSIVE — TABLET                        */
+/* ============================================= */
+@media (max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .doctors-grid{grid-template-columns:repeat(2,1fr);}
+  .hero .container{grid-template-columns:1fr;}
+  .vitals-panel{max-width:480px;}
+  .about .container{grid-template-columns:1fr;}
+  .about-visual{order:2;max-width:480px;}
+  .appointment-wrap{grid-template-columns:1fr;}
+  .contact .container{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .dept-row{grid-template-columns:60px 1fr 140px;}
+  .dept-row p{display:none;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
 }
 
-.socials{
-    margin-top:10px;
+/* ============================================= */
+/* 14. RESPONSIVE — MOBILE                        */
+/* ============================================= */
+@media (max-width:768px){
+  section{padding:var(--space-xl) 0;}
+  .hero{padding:var(--space-xl) 0;}
+  .hero-stats{gap:var(--space-lg);flex-wrap:wrap;}
+  .services-grid{grid-template-columns:1fr;}
+  .doctors-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;gap:var(--space-xl);}
+  .dept-row{grid-template-columns:1fr;gap:.4rem;text-align:left;}
+  .dept-row .btn{justify-self:start;}
+  .dept-row p{display:block;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+  .appointment-aside,.appointment-form{padding:var(--space-lg) var(--space-md);}
+  .records-head{flex-direction:column;align-items:flex-start;}
+  .vitals-readouts{grid-template-columns:repeat(3,1fr);}
 }
 
-.socials span{
-    display:inline-block;
-    margin:0 8px;
-    width:35px;
-    height:35px;
-    line-height:35px;
-    border-radius:50%;
-    background:rgba(255,255,255,.1);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:992px){
-
-    .hero-content,
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .doctors-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .department-list{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:768px){
-
-    .hamburger{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:80px;
-        left:0;
-        right:0;
-        background:white;
-        flex-direction:column;
-        text-align:center;
-        max-height:0;
-        overflow:hidden;
-        transition:.4s;
-    }
-
-    .mobile-toggle:checked ~ .nav-links{
-        max-height:500px;
-        padding:20px 0;
-    }
-
-    .navbar .btn-primary{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:2.4rem;
-    }
-
-    .services-grid,
-    .doctors-grid,
-    .department-list,
-    .testimonial-grid,
-    .footer-grid,
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-}
 </style>
 </head>
-
 <body>
 
-<header>
-<div class="container navbar">
+<!-- ============================================= -->
+<!-- HEADER / NAVBAR                                -->
+<!-- ============================================= -->
+<header class="site-header">
+  <nav class="navbar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h4l2 7 4-14 2 7h6"/>
+        </svg>
+      </span>
+      Meridian Health
+    </a>
 
-<div class="logo">Medi<span>Care</span></div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-<input type="checkbox" id="menu" class="mobile-toggle">
-<label for="menu" class="hamburger">☰</label>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#appointment">Appointment</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<nav class="nav-links">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Doctors</a>
-<a href="#">Departments</a>
-<a href="#">Appointment</a>
-<a href="#">Contact</a>
-</nav>
-
-<a href="#" class="btn btn-primary">Emergency: Call Now</a>
-
-</div>
+    <div class="nav-cta">
+      <span class="phone-tag">+1 (800) 555‑0142</span>
+      <a href="#contact" class="btn btn-emergency btn-sm">Emergency: Call Now</a>
+      <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </nav>
 </header>
 
-<section class="hero">
-<div class="container hero-content">
+<!-- ============================================= -->
+<!-- HERO SECTION                                   -->
+<!-- ============================================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow">Meridian Health Group</span>
+      <h1>Your Health, Our <em>Absolute Priority</em></h1>
+      <p>Board-certified specialists, round-the-clock emergency care, and diagnostics built around you — all in one calm, connected place to heal.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#appointment" class="btn btn-outline" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">Book an Appointment</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>24/7</strong><span>Emergency response</span></div>
+        <div><strong>180+</strong><span>Specialist physicians</span></div>
+        <div><strong>32 yrs</strong><span>Caring for our city</span></div>
+      </div>
+    </div>
 
-<div>
-<h1>Your Health, Our Absolute Priority</h1>
-<p>
-Providing world-class healthcare services with experienced doctors,
-advanced technology, and compassionate patient-centered care.
-</p>
-<a href="#" class="btn btn-primary">Our Services</a>
-</div>
-
-<div class="hero-image">
-Professional Medical Environment
-</div>
-
-</div>
+    <div class="hero-visual">
+      <div class="vitals-panel">
+        <div class="vitals-panel-head">
+          <span>PATIENT MONITOR · BAY 04</span>
+          <span class="live-dot">LIVE</span>
+        </div>
+        <svg class="vitals-wave" viewBox="0 0 480 90" preserveAspectRatio="none">
+          <polyline points="0,45 40,45 55,45 65,15 75,75 85,20 95,45 140,45 180,45 195,45 205,18 215,72 225,30 235,45 280,45 320,45 335,45 345,18 355,72 365,30 375,45 420,45 460,45 480,45"
+            fill="none" stroke="#0EA5A8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <div class="vitals-readouts">
+          <div class="readout"><span>HEART RATE</span><strong class="ok">72 <small style="font-size:.6em;">bpm</small></strong></div>
+          <div class="readout"><span>BLOOD PRESSURE</span><strong>118/76</strong></div>
+          <div class="readout"><span>SPO₂</span><strong class="ok">98%</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Continue with About, Services, Doctors, Departments,
-Appointment, Table, Testimonials, Contact and Footer -->
+<div class="vital-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 32" preserveAspectRatio="none"><polyline points="0,16 500,16 520,16 535,4 550,28 565,8 580,16 1200,16" fill="none" stroke="#D7DEE5" stroke-width="1.5"/></svg>
+</div>
+
+<!-- ============================================= -->
+<!-- ABOUT SECTION                                  -->
+<!-- ============================================= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-visual">
+      <div class="about-visual-inner">
+        <h4>Our Mission</h4>
+        <p>To deliver compassionate, evidence-based care that treats every patient as a partner — not a chart number — across every department we run.</p>
+      </div>
+      <div class="experience-badge">
+        <strong>32+</strong>
+        <span>YEARS OF CARE</span>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <span class="eyebrow">About Meridian</span>
+      <h2>Care built around the person, not just the procedure</h2>
+      <p>Since 1994, Meridian Health has grown from a single community clinic into a full-service hospital network — without losing the bedside manner that started it. Our teams combine modern diagnostics with the kind of attentiveness that makes a hospital feel less like one.</p>
+
+      <ul class="check-list">
+        <li>
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>Accredited quality care</h5><p>Independently reviewed and certified across every major department.</p></div>
+        </li>
+        <li>
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>24/7 emergency support</h5><p>A fully staffed emergency floor, every hour of every day.</p></div>
+        </li>
+        <li>
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>180+ expert physicians</h5><p>Specialists trained at leading institutions, based right here.</p></div>
+        </li>
+        <li>
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>Modern diagnostic labs</h5><p>In-house imaging and pathology for same-day answers.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SERVICES GRID                                 -->
+<!-- ============================================= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">What We Treat</span>
+      <h2>Specialized care, organized around you</h2>
+      <p>Four core programs anchor our hospital — each staffed by specialists who treat that system and only that system.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Cardiology</h3>
+        <p>Comprehensive heart care from preventive screening to advanced interventional procedures.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+        <h3>Pediatrics</h3>
+        <p>Gentle, family-centered care for newborns through adolescence, with same-week visits.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08A3 3 0 0 1 3 13.83V8.5A2.5 2.5 0 0 1 5.5 6"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5"/></svg></div>
+        <h3>Neurology</h3>
+        <p>Diagnosis and treatment for conditions of the brain, spine, and nervous system.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/></svg></div>
+        <h3>Orthopedics</h3>
+        <p>Joint, bone, and sports-injury care with surgical and non-surgical recovery paths.</p>
+        <a href="#" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- DOCTORS SECTION                                -->
+<!-- ============================================= -->
+<section class="doctors" id="doctors">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Our Specialists</span>
+      <h2>Meet the team behind the care</h2>
+      <p>Every physician at Meridian is board-certified and hand-selected for both expertise and bedside manner.</p>
+    </div>
+
+    <div class="doctors-grid">
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <span class="doctor-status">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Elena Marsh</h3>
+          <span class="doctor-specialty">CARDIOLOGY</span>
+          <a href="#" class="btn btn-outline btn-sm btn-block">View Profile</a>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <span class="doctor-status">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Samuel Cho</h3>
+          <span class="doctor-specialty">PEDIATRICS</span>
+          <a href="#" class="btn btn-outline btn-sm btn-block">View Profile</a>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <span class="doctor-status">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Priya Nandwani</h3>
+          <span class="doctor-specialty">NEUROLOGY</span>
+          <a href="#" class="btn btn-outline btn-sm btn-block">View Profile</a>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <span class="doctor-status">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Marcus Olawale</h3>
+          <span class="doctor-specialty">ORTHOPEDICS</span>
+          <a href="#" class="btn btn-outline btn-sm btn-block">View Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- DEPARTMENTS                                    -->
+<!-- ============================================= -->
+<section class="departments" id="departments">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Departments</span>
+      <h2>Every department, one connected hospital</h2>
+      <p>From the emergency floor to the pharmacy counter, each department runs on the same patient record — no repeating your story twice.</p>
+    </div>
+
+    <div class="dept-list">
+      <div class="dept-row">
+        <span class="dept-num">01</span>
+        <h3>Emergency Care</h3>
+        <p>Rapid-response trauma and urgent care, staffed and stocked around the clock.</p>
+        <a href="#contact" class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.25);">Details</a>
+      </div>
+      <div class="dept-row">
+        <span class="dept-num">02</span>
+        <h3>Diagnostic Lab</h3>
+        <p>In-house imaging, bloodwork, and pathology with most results same-day.</p>
+        <a href="#contact" class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.25);">Details</a>
+      </div>
+      <div class="dept-row">
+        <span class="dept-num">03</span>
+        <h3>Pharmacy</h3>
+        <p>On-site prescription fulfillment, fully synced with your treating physician.</p>
+        <a href="#contact" class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.25);">Details</a>
+      </div>
+      <div class="dept-row">
+        <span class="dept-num">04</span>
+        <h3>Maternity & Birthing</h3>
+        <p>Private suites, certified midwives, and a NICU one floor away if ever needed.</p>
+        <a href="#contact" class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.25);">Details</a>
+      </div>
+      <div class="dept-row">
+        <span class="dept-num">05</span>
+        <h3>Rehabilitation</h3>
+        <p>Physical, occupational, and speech therapy under one recovery plan.</p>
+        <a href="#contact" class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.25);">Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- APPOINTMENT FORM                               -->
+<!-- ============================================= -->
+<section class="appointment" id="appointment">
+  <div class="container">
+    <div class="appointment-wrap">
+      <div class="appointment-aside">
+        <span class="eyebrow">Book a Visit</span>
+        <h2>Let's find your right specialist</h2>
+        <p>Tell us what you need and when — our care coordinators confirm every appointment within one business hour.</p>
+
+        <div class="aside-point">
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>Same-week availability</h5><p>Most departments offer slots within 5 business days.</p></div>
+        </div>
+        <div class="aside-point">
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>No paperwork on arrival</h5><p>Everything's filed ahead of time, so you walk straight in.</p></div>
+        </div>
+        <div class="aside-point">
+          <span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h5>Insurance handled for you</h5><p>We verify coverage before you ever step in the door.</p></div>
+        </div>
+      </div>
+
+      <form class="appointment-form" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Jordan Avery" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jordan@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(800) 555-0142" required>
+          </div>
+          <div class="form-field">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-field">
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+              <option value="" disabled selected>Select a department</option>
+              <option>Cardiology</option>
+              <option>Pediatrics</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+              <option>General Checkup</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="doctor">Preferred Doctor</label>
+            <select id="doctor" name="doctor">
+              <option value="" disabled selected>No preference</option>
+              <option>Dr. Elena Marsh</option>
+              <option>Dr. Samuel Cho</option>
+              <option>Dr. Priya Nandwani</option>
+              <option>Dr. Marcus Olawale</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" placeholder="Tell us a bit about why you're visiting..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Book Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="vital-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 32" preserveAspectRatio="none"><polyline points="0,16 500,16 520,16 535,4 550,28 565,8 580,16 1200,16" fill="none" stroke="#D7DEE5" stroke-width="1.5"/></svg>
+</div>
+
+<!-- ============================================= -->
+<!-- PATIENT RECORDS TABLE                          -->
+<!-- ============================================= -->
+<section class="records" id="records">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Patient Dashboard</span>
+      <h2>Recent activity overview</h2>
+      <p>A sample of how visits move through our system, from check-in to completed care.</p>
+    </div>
+
+    <div class="records-panel">
+      <div class="records-head">
+        <h3>Recent Visits</h3>
+        <span class="live-dot">SYNCED JUST NOW</span>
+      </div>
+      <div class="table-scroll">
+        <table class="records">
+          <thead>
+            <tr>
+              <th>Patient ID</th>
+              <th>Patient Name</th>
+              <th>Department</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="patient-id">MH‑10234</td>
+              <td><span class="patient-name"><span class="avatar-dot">JA</span>Jordan Avery</span></td>
+              <td>Cardiology</td>
+              <td>Jun 18, 2026</td>
+              <td><span class="pill pill-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td class="patient-id">MH‑10235</td>
+              <td><span class="patient-name"><span class="avatar-dot">RK</span>Riya Kapoor</span></td>
+              <td>Pediatrics</td>
+              <td>Jun 19, 2026</td>
+              <td><span class="pill pill-pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td class="patient-id">MH‑10236</td>
+              <td><span class="patient-name"><span class="avatar-dot">TB</span>Tomás Bilal</span></td>
+              <td>Orthopedics</td>
+              <td>Jun 20, 2026</td>
+              <td><span class="pill pill-scheduled">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td class="patient-id">MH‑10237</td>
+              <td><span class="patient-name"><span class="avatar-dot">NM</span>Nadia Müller</span></td>
+              <td>Neurology</td>
+              <td>Jun 21, 2026</td>
+              <td><span class="pill pill-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td class="patient-id">MH‑10238</td>
+              <td><span class="patient-name"><span class="avatar-dot">DO</span>David Osei</span></td>
+              <td>Emergency Care</td>
+              <td>Jun 22, 2026</td>
+              <td><span class="pill pill-pending">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TESTIMONIALS                                   -->
+<!-- ============================================= -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Patient Stories</span>
+      <h2>What our patients say</h2>
+      <p>Real words from people we've had the privilege of treating.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"From the ER intake to my follow-up call, every single person knew my chart. I never had to repeat my own story."</blockquote>
+        <div class="testi-author">
+          <span class="avatar-dot">JA</span>
+          <div><strong>Jordan Avery</strong><span>Cardiology Patient</span></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"Our pediatrician actually called the next morning to check on my daughter. That kind of follow-through is rare."</blockquote>
+        <div class="testi-author">
+          <span class="avatar-dot">RK</span>
+          <div><strong>Riya Kapoor</strong><span>Pediatrics Patient</span></div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"Knee replacement at 64 sounded terrifying. Dr. Olawale's team walked me through every step and I was back to gardening in ten weeks."</blockquote>
+        <div class="testi-author">
+          <span class="avatar-dot">TB</span>
+          <div><strong>Tomás Bilal</strong><span>Orthopedics Patient</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CONTACT SECTION                                -->
+<!-- ============================================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-info">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 style="margin-bottom:1.5rem;">Visit, call, or write — we're listening</h2>
+
+      <div class="contact-item">
+        <span class="check-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><h5>Address</h5><p>482 Harborview Avenue, Suite 100, Lakeside, CA 92103</p></div>
+      </div>
+      <div class="contact-item">
+        <span class="check-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div><h5>Phone</h5><p>Main: (800) 555‑0142 · Emergency: (800) 555‑0911</p></div>
+      </div>
+      <div class="contact-item">
+        <span class="check-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg></span>
+        <div><h5>Email</h5><p>care@meridianhealth.example</p></div>
+      </div>
+      <div class="contact-item">
+        <span class="check-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <div><h5>Operating Hours</h5><p>Outpatient: Mon–Sat, 7am–9pm · Emergency: 24/7, every day</p></div>
+      </div>
+    </div>
+
+    <div class="map-frame">
+      <span class="map-pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </span>
+      <span class="map-label">📍 482 Harborview Avenue, Lakeside</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- FOOTER                                         -->
+<!-- ============================================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 7 4-14 2 7h6"/></svg>
+          </span>
+          Meridian Health
+        </a>
+        <p>A community hospital network combining modern diagnostics with the bedside care that started it all in 1994.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#doctors">Our Doctors</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Cardiology</a></li>
+          <li><a href="#services">Pediatrics</a></li>
+          <li><a href="#services">Neurology</a></li>
+          <li><a href="#services">Orthopedics</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <p style="font-size:.88rem;margin-bottom:.5rem;">Health tips and hospital news, monthly — no spam.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="you@email.com" aria-label="Email for newsletter">
+          <button type="submit" aria-label="Subscribe">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Meridian Health Group. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
