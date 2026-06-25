@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind CSS Component Reference</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <!-- ============================================= -->
+  <!-- PAGE HEADER                                    -->
+  <!-- ============================================= -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6">
+      <h1 class="text-2xl font-semibold tracking-tight text-slate-900">Tailwind CSS Component Reference</h1>
+      <p class="mt-1 text-sm text-slate-500">Common layouts, buttons, cards, forms, and responsive patterns — copy any block directly into your project.</p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    <!-- ============================================= -->
+    <!-- 1. BUTTONS                                     -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">1. Buttons</h2>
+        <p class="text-sm text-slate-500">Variants built from the same base classes — size, color, and emphasis change with utility swaps only.</p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 bg-white p-6">
+        <div class="flex flex-wrap items-center gap-3">
+
+          <!-- Primary -->
+          <button class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+            Primary
+          </button>
+
+          <!-- Secondary -->
+          <button class="inline-flex items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+            Secondary
+          </button>
+
+          <!-- Soft / tinted -->
+          <button class="inline-flex items-center justify-center rounded-md bg-indigo-50 px-4 py-2.5 text-sm font-medium text-indigo-700 hover:bg-indigo-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+            Soft
+          </button>
+
+          <!-- Destructive -->
+          <button class="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-colors">
+            Delete
+          </button>
+
+          <!-- Ghost -->
+          <button class="inline-flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+            Ghost
+          </button>
+
+          <!-- Disabled -->
+          <button disabled class="inline-flex items-center justify-center rounded-md bg-slate-200 px-4 py-2.5 text-sm font-medium text-slate-400 cursor-not-allowed">
+            Disabled
+          </button>
+
+        </div>
+
+        <!-- Sizes + icon button -->
+        <div class="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+          <button class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white hover:bg-indigo-500 transition-colors">Small</button>
+          <button class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors">Medium</button>
+          <button class="rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white hover:bg-indigo-500 transition-colors">Large</button>
+
+          <!-- Icon button -->
+          <button aria-label="Add item" class="inline-flex items-center justify-center rounded-full bg-indigo-600 p-2 text-white hover:bg-indigo-500 transition-colors">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </button>
+
+          <!-- Button with icon + label -->
+          <button class="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 transition-colors">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 2. CARD                                        -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">2. Card</h2>
+        <p class="text-sm text-slate-500">A self-contained content block — the most reused pattern in any Tailwind UI.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Basic card -->
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 text-base font-semibold text-slate-900">Fast by default</h3>
+          <p class="mt-2 text-sm text-slate-500">Utility classes compile to a small, deduplicated stylesheet — no runtime cost in the browser.</p>
+        </div>
+
+        <!-- Card with image -->
+        <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-32 bg-gradient-to-br from-indigo-500 to-purple-500"></div>
+          <div class="p-6">
+            <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">Design</span>
+            <h3 class="mt-3 text-base font-semibold text-slate-900">Composable by design</h3>
+            <p class="mt-2 text-sm text-slate-500">Build new components by recombining existing utilities — no new CSS file required.</p>
+          </div>
+        </div>
+
+        <!-- Card with footer action -->
+        <div class="flex flex-col rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex-1 p-6">
+            <h3 class="text-base font-semibold text-slate-900">Pro plan</h3>
+            <p class="mt-2 text-sm text-slate-500">Unlimited projects, priority support, and team seats included.</p>
+            <p class="mt-4 text-3xl font-semibold text-slate-900">$24<span class="text-sm font-normal text-slate-500">/mo</span></p>
+          </div>
+          <div class="border-t border-slate-100 p-6 pt-4">
+            <button class="w-full rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-500 transition-colors">
+              Upgrade plan
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 3. RESPONSIVE GRID LAYOUT                      -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">3. Responsive grid layout</h2>
+        <p class="text-sm text-slate-500"><code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">grid-cols-1</code> on mobile, <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">sm:grid-cols-2</code>, <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">lg:grid-cols-4</code> — resize the window to see it respond.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center text-sm font-medium text-slate-500">Item 1</div>
+        <div class="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center text-sm font-medium text-slate-500">Item 2</div>
+        <div class="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center text-sm font-medium text-slate-500">Item 3</div>
+        <div class="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center text-sm font-medium text-slate-500">Item 4</div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 4. FLEXBOX LAYOUT (HOLY GRAIL / SPLIT)         -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">4. Flexbox split layout</h2>
+        <p class="text-sm text-slate-500">Stacks vertically on mobile with <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">flex-col</code>, becomes a row at <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">md:flex-row</code>.</p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-xl border border-slate-200 bg-white p-6 md:flex-row md:items-center">
+        <div class="flex h-40 w-full items-center justify-center rounded-lg bg-slate-100 text-sm font-medium text-slate-400 md:w-1/3">
+          Image
+        </div>
+        <div class="flex-1">
+          <h3 class="text-base font-semibold text-slate-900">Side-by-side on desktop, stacked on mobile</h3>
+          <p class="mt-2 text-sm text-slate-500">This is the single most common layout shift in responsive design — a media block that reads top-to-bottom on a phone and left-to-right once there's room.</p>
+          <button class="mt-4 inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500">
+            Read more →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. NAVBAR (RESPONSIVE)                         -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">5. Responsive navbar</h2>
+        <p class="text-sm text-slate-500">Links hide behind a menu button below <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">md</code>; this demo uses a checkbox toggle so it works without JavaScript.</p>
+      </div>
+
+      <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <nav class="relative">
+          <div class="flex items-center justify-between px-6 py-4">
+            <span class="text-base font-semibold text-slate-900">Brand</span>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex md:items-center md:gap-8">
+              <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900">Product</a>
+              <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900">Pricing</a>
+              <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900">Docs</a>
+              <button class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors">Sign up</button>
+            </div>
+
+            <!-- Mobile toggle (checkbox hack, no JS) -->
+            <label for="nav-toggle" class="md:hidden cursor-pointer rounded-md p-2 text-slate-600 hover:bg-slate-100">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </label>
+            <input type="checkbox" id="nav-toggle" class="peer hidden" />
+
+            <!-- Mobile menu panel -->
+            <div class="absolute inset-x-0 top-full hidden flex-col gap-1 border-t border-slate-200 bg-white p-4 peer-checked:flex md:hidden">
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50">Product</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50">Pricing</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50">Docs</a>
+              <button class="mt-1 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors">Sign up</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 6. FORM ELEMENTS                               -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">6. Form elements</h2>
+        <p class="text-sm text-slate-500">Inputs, select, checkbox, and validation state — consistent focus rings throughout via <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">focus:ring</code>.</p>
+      </div>
+
+      <form class="rounded-xl border border-slate-200 bg-white p-6" onsubmit="return false;">
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-900">Name</label>
+            <input type="text" id="name" placeholder="Jane Cooper"
+              class="mt-1.5 block w-full rounded-md border-0 px-3 py-2 text-sm text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+          </div>
+
+          <div>
+            <label for="email-field" class="block text-sm font-medium text-slate-900">Email</label>
+            <input type="email" id="email-field" placeholder="jane@example.com"
+              class="mt-1.5 block w-full rounded-md border-0 px-3 py-2 text-sm text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+          </div>
+
+          <div>
+            <label for="role" class="block text-sm font-medium text-slate-900">Role</label>
+            <select id="role" class="mt-1.5 block w-full rounded-md border-0 px-3 py-2 text-sm text-slate-900 ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+              <option>Engineer</option>
+              <option>Designer</option>
+              <option>Product manager</option>
+            </select>
+          </div>
+
+          <!-- Error state -->
+          <div>
+            <label for="username" class="block text-sm font-medium text-slate-900">Username</label>
+            <input type="text" id="username" value="jane cooper!!"
+              class="mt-1.5 block w-full rounded-md border-0 px-3 py-2 text-sm text-red-900 ring-1 ring-inset ring-red-400 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500">
+            <p class="mt-1.5 text-sm text-red-600">Usernames can only contain letters and numbers.</p>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label for="message" class="block text-sm font-medium text-slate-900">Message</label>
+            <textarea id="message" rows="3" placeholder="Write your message…"
+              class="mt-1.5 block w-full rounded-md border-0 px-3 py-2 text-sm text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"></textarea>
+          </div>
+
+          <div class="sm:col-span-2 flex items-center gap-2">
+            <input type="checkbox" id="terms" class="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600">
+            <label for="terms" class="text-sm text-slate-700">I agree to the terms and conditions</label>
+          </div>
+
+        </div>
+
+        <div class="mt-6 flex justify-end gap-3 border-t border-slate-100 pt-5">
+          <button type="button" class="rounded-md px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors">Cancel</button>
+          <button type="submit" class="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-500 transition-colors">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 7. BADGES / TAGS                               -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">7. Badges</h2>
+        <p class="text-sm text-slate-500">Small status indicators — same base shape, color swapped per state.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white p-6">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Active
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Pending
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span> Failed
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
+          <span class="h-1.5 w-1.5 rounded-full bg-slate-400"></span> Archived
+        </span>
+        <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">v2.4.0</span>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 8. RESPONSIVE DATA TABLE                       -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">8. Responsive data table</h2>
+        <p class="text-sm text-slate-500">Wrapped in <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">overflow-x-auto</code> so it scrolls horizontally on narrow screens instead of breaking the layout.</p>
+      </div>
+
+      <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[480px] text-left text-sm">
+            <thead class="border-b border-slate-200 bg-slate-50">
+              <tr>
+                <th class="px-6 py-3 font-medium text-slate-500">Name</th>
+                <th class="px-6 py-3 font-medium text-slate-500">Role</th>
+                <th class="px-6 py-3 font-medium text-slate-500">Status</th>
+                <th class="px-6 py-3 font-medium text-slate-500"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50">
+                <td class="px-6 py-4 font-medium text-slate-900">Jane Cooper</td>
+                <td class="px-6 py-4 text-slate-500">Engineer</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700">Active</span></td>
+                <td class="px-6 py-4 text-right"><a href="#" class="text-indigo-600 hover:text-indigo-500">Edit</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-6 py-4 font-medium text-slate-900">Marcus Lee</td>
+                <td class="px-6 py-4 text-slate-500">Designer</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700">Pending</span></td>
+                <td class="px-6 py-4 text-right"><a href="#" class="text-indigo-600 hover:text-indigo-500">Edit</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-6 py-4 font-medium text-slate-900">Priya Shah</td>
+                <td class="px-6 py-4 text-slate-500">Product Manager</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">Archived</span></td>
+                <td class="px-6 py-4 text-right"><a href="#" class="text-indigo-600 hover:text-indigo-500">Edit</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 9. MODAL / DIALOG                              -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">9. Modal dialog</h2>
+        <p class="text-sm text-slate-500">Shown statically here for reference — in production, toggle the wrapper's visibility with JS or Alpine's <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">x-show</code>.</p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 bg-slate-900/5 p-8">
+        <div class="mx-auto w-full max-w-sm rounded-xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-red-50">
+            <svg class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 text-base font-semibold text-slate-900">Delete project</h3>
+          <p class="mt-2 text-sm text-slate-500">This removes the project and all its files. This can't be undone.</p>
+          <div class="mt-6 flex justify-end gap-3">
+            <button class="rounded-md px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors">Cancel</button>
+            <button class="rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-500 transition-colors">Delete</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 10. RESPONSIVE TYPOGRAPHY                      -->
+    <!-- ============================================= -->
+    <section>
+      <div class="mb-5">
+        <h2 class="text-lg font-semibold text-slate-900">10. Responsive typography</h2>
+        <p class="text-sm text-slate-500">Font size scales up at the <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">sm</code> and <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">lg</code> breakpoints instead of staying fixed.</p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 bg-white p-6">
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+          This heading grows with the viewport
+        </h3>
+        <p class="mt-3 max-w-2xl text-sm text-slate-500 sm:text-base">
+          Pairing <code class="rounded bg-slate-100 px-1.5 py-0.5 text-xs">text-2xl sm:text-3xl lg:text-4xl</code> on a heading keeps it legible on a phone without looking small on a desktop monitor.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-500">
+      Built with the Tailwind CSS CDN build — for production, install Tailwind via npm and configure a content path instead.
+    </div>
+  </footer>
+
+</body>
+</html>

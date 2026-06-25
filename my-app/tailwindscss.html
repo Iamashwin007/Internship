@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Health — Your Health, Our Absolute Priority</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-['Inter'] text-[#1C2B3A] bg-[#F7F8FA] antialiased leading-relaxed">
+
+  <header class="sticky top-0 z-[1000] bg-white/92 backdrop-blur-[10px] border-b border-[#EEF1F4]">
+    <nav class="flex items-center justify-between p-4 max-w-[1240px] mx-auto gap-6">
+      <a href="#" class="flex items-center gap-[0.6rem] font-['Fraunces'] font-bold text-[1.35rem] text-[#0B1E33] shrink-0">
+        <div class="w-[34px] h-[34px] rounded-[9px] bg-[#0B1E33] flex items-center justify-center shrink-0">
+          <svg class="w-[18px] h-[18px] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <span>Meridian Health</span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+      
+      <div class="absolute top-full left-0 right-0 bg-white flex flex-col items-start gap-0 px-6 max-h-0 overflow-hidden border-b border-[#EEF1F4] shadow-md transition-all duration-[320ms] ease-[cubic-bezier(0.4,0,0.2,1)] peer-checked:max-h-[420px] peer-checked:py-2 peer-checked:px-6 lg:static lg:flex-row lg:items-center lg:gap-10 lg:p-0 lg:max-h-none lg:overflow-visible lg:border-none lg:shadow-none">
+        <a href="#about" class="relative text-[0.95rem] font-medium text-[#122B47] py-[0.85rem] w-full border-b border-[#EEF1F4] lg:w-auto lg:p-1 lg:border-none hover:text-[#0C8C8F] group after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#0EA5A8] after:transition-all after:duration-[320ms] hover:after:w-full">About Us</a>
+        <a href="#services" class="relative text-[0.95rem] font-medium text-[#122B47] py-[0.85rem] w-full border-b border-[#EEF1F4] lg:w-auto lg:p-1 lg:border-none hover:text-[#0C8C8F] group after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#0EA5A8] after:transition-all after:duration-[320ms] hover:after:w-full">Services</a>
+        <a href="#doctors" class="relative text-[0.95rem] font-medium text-[#122B47] py-[0.85rem] w-full border-b border-[#EEF1F4] lg:w-auto lg:p-1 lg:border-none hover:text-[#0C8C8F] group after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#0EA5A8] after:transition-all after:duration-[320ms] hover:after:w-full">Our Team</a>
+        <a href="#appointment" class="relative text-[0.95rem] font-medium text-[#122B47] py-[0.85rem] w-full border-b border-[#EEF1F4] lg:w-auto lg:p-1 lg:border-none hover:text-[#0C8C8F] group after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#0EA5A8] after:transition-all after:duration-[320ms] hover:after:w-full">Portal</a>
+      </div>
+
+      <div class="flex items-center gap-4 shrink-0">
+        <span class="font-['JetBrains_Mono'] text-[0.82rem] text-[#7C8A9B] hidden md:inline">EMERGENCY: +1 (555) 0199</span>
+        <a href="#appointment" class="inline-flex items-center justify-center gap-2 font-semibold text-[0.85rem] px-[1.15rem] py-[0.55rem] rounded-[8px] bg-[#0EA5A8] text-white shadow-sm hover:bg-[#0C8C8F] hover:-translate-y-0.5 hover:shadow-md transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap">Book Appointment</a>
+        
+        <label for="menu-toggle" class="flex flex-col gap-[5px] w-26px py-1.5 cursor-pointer lg:hidden group">
+          <span class="block h-[2px] w-6 bg-[#0B1E33] rounded-[2px] transition-all duration-[320ms] peer-checked:group-[]:translate-y-[7px] peer-checked:group-[]:rotate-45"></span>
+          <span class="block h-[2px] w-6 bg-[#0B1E33] rounded-[2px] transition-all duration-[320ms] peer-checked:group-[]:opacity-0"></span>
+          <span class="block h-[2px] w-6 bg-[#0B1E33] rounded-[2px] transition-all duration-[320ms] peer-checked:group-[]:-translate-y-[7px] peer-checked:group-[]:-rotate-45"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bg-[#0B1E33] bg-[radial-gradient(circle_at_85%_20%,rgba(14,165,168,0.22),transparent_55%)] py-24 overflow-hidden">
+    <div class="w-full max-w-[1240px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-16 items-center">
+      <div class="hero-copy">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0EA5A8] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_rgba(14,165,168,0.25)]">
+          Clinical Excellence
+        </div>
+        <h1 class="font-['Fraunces'] font-semibold text-[#FFFFFF] leading-[1.15] tracking-[-0.01em] text-[clamp(2.3rem,4vw,3.4rem)] mb-6">
+          Your Health, Our <em class="not-italic text-[#0EA5A8]">Absolute Priority</em>.
+        </h1>
+        <p class="text-[#AAB9C9] text-[1.1rem] max-w-[520px] mb-10">
+          Experience world-class healthcare driven by modern clinical precision, automated diagnostics, and specialized data-driven medical units.
+        </p>
+        <div class="flex gap-4 flex-wrap mb-16">
+          <a href="#appointment" class="inline-flex items-center justify-center gap-2 font-semibold text-[0.95rem] px-7 py-3.5 rounded-[8px] bg-[#0EA5A8] text-white shadow-sm hover:bg-[#0C8C8F] hover:-translate-y-0.5 hover:shadow-md transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap">
+            Schedule a Visit
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 font-semibold text-[0.95rem] px-7 py-3.5 rounded-[8px] bg-transparent text-[#0B1E33] border-[1.5px] border-[#D7DEE5] hover:border-[#0B1E33] hover:-translate-y-0.5 transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap text-white hover:text-white">
+            Explore Services
+          </a>
+        </div>
+        <div class="flex gap-16 border-t border-white/12 pt-6">
+          <div>
+            <strong class="block font-['JetBrains_Mono'] text-[1.7rem] text-white font-semibold">99.4%</strong>
+            <span class="text-[0.82rem] text-[#8FA0B3]">Diagnostic Accuracy</span>
+          </div>
+          <div>
+            <strong class="block font-['JetBrains_Mono'] text-[1.7rem] text-white font-semibold">24/7</strong>
+            <span class="text-[0.82rem] text-[#8FA0B3]">Emergency Care Response</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#122B47] border border-white/10 rounded-[22px] p-10 shadow-2xl relative max-w-[480px] mx-auto lg:max-w-none w-full">
+        <div class="flex justify-between items-center mb-6 pb-6 border-b border-white/10">
+          <span class="font-['JetBrains_Mono'] text-[0.78rem] text-[#8FA0B3] tracking-[0.05em]">PATIENT MONITOR : UNIT_04</span>
+          <div class="inline-flex items-center gap-1.5 text-[#0EA5A8] font-['JetBrains_Mono'] text-[0.75rem]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#0EA5A8] animate-[pulse_1.8s_infinite]"></span> LIVE TELEMETRY
+          </div>
+        </div>
+        <div class="w-full h-[90px] mb-6">
+          <svg class="w-full h-[90px] block text-[#0EA5A8]" viewBox="0 0 300 90" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 0 45 L 40 45 L 50 25 L 60 65 L 70 45 L 120 45 L 130 10 L 142 80 L 155 45 L 200 45 L 210 30 L 220 60 L 230 45 L 300 45" />
+          </svg>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white/4 border border-white/8 rounded-[8px] p-3.5">
+            <span class="block text-[0.7rem] text-[#8FA0B3] tracking-[0.04em] mb-1">PULSE RATE</span>
+            <strong class="font-['JetBrains_Mono'] text-[1.25rem] text-white font-semibold text-[#0EA5A8]">72 <small class="text-xs">BPM</small></strong>
+          </div>
+          <div class="bg-white/4 border border-white/8 rounded-[8px] p-3.5">
+            <span class="block text-[0.7rem] text-[#8FA0B3] tracking-[0.04em] mb-1">BLOOD PRESSURE</span>
+            <strong class="font-['JetBrains_Mono'] text-[1.25rem] text-white font-semibold text-[#0EA5A8]">120/80</strong>
+          </div>
+          <div class="bg-white/4 border border-white/8 rounded-[8px] p-3.5">
+            <span class="block text-[0.7rem] text-[#8FA0B3] tracking-[0.04em] mb-1">SPO2 STATUS</span>
+            <strong class="font-['JetBrains_Mono'] text-[1.25rem] text-white font-semibold text-[#0EA5A8]">99% <span class="text-[0.75rem] font-sans font-bold text-[#0EA5A8]">OK</span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-8 overflow-hidden bg-[#F7F8FA] text-[#0EA5A8]/20">
+    <svg class="w-full h-8 block" viewBox="0 0 1440 32" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M0,16 L540,16 L552,4 L568,28 L580,16 L1440,16" />
+    </svg>
+  </div>
+
+  <section id="about" class="py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
+      <div class="bg-[#E3F6F4] rounded-[22px] p-10 relative max-w-[480px] lg:max-w-none order-2 lg:order-1">
+        <div class="bg-white rounded-[14px] p-10 shadow-md">
+          <h4 class="font-['Fraunces'] font-semibold text-[#0B1E33] leading-[1.15] tracking-[-0.01em] text-[1.05rem] mb-2">Our Clinical Mandate</h4>
+          <p class="text-[#7C8A9B] text-[0.92rem]">To optimize operational efficiency and deliver absolute accuracy, bypassing regional delays and fragmented information routing pathways standard in legacy setups.</p>
+        </div>
+        <div class="absolute bottom-[-1.25rem] right-[-1.25rem] bg-[#0B1E33] text-white rounded-[14px] p-[1.1rem_1.4rem] shadow-lg text-center">
+          <strong class="block font-['Fraunces'] text-[2.1rem] text-[#0EA5A8]">25+</strong>
+          <span class="text-[0.72rem] text-[#AAB9C9] tracking-[0.04em]">YEARS COMPREHENSIVE SERVICE</span>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0C8C8F] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_#E3F6F4]">
+          Who We Are
+        </div>
+        <h2 class="font-['Fraunces'] font-semibold text-[#0B1E33] leading-[1.15] tracking-[-0.01em] text-[clamp(1.9rem,3vw,2.5rem)] mb-4">A Modern Protocol Framework for Patient Care.</h2>
+        <p class="text-[#7C8A9B] mb-10 max-w-[540px]">We operate at the critical intersection of professional clinical expertise and high-velocity care orchestration to ensure treatment remains uninterrupted.</p>
+        
+        <ul class="grid gap-4">
+          <li class="flex items-start gap-[0.85rem] p-4 bg-white rounded-[8px] border border-[#EEF1F4] transition-all duration-150 hover:border-[#0EA5A8] hover:translate-x-1">
+            <div class="shrink-0 w-7 h-7 rounded-full bg-[#E3F6F4] text-[#0C8C8F] flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h5 class="text-[0.98rem] font-semibold text-[#0B1E33] mb-0.5">Advanced Centralized Diagnostics</h5>
+              <p class="text-[0.88rem] text-[#7C8A9B]">All records are systematically synthesized inside a localized node framework to prevent vital metric omission.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-[0.85rem] p-4 bg-white rounded-[8px] border border-[#EEF1F4] transition-all duration-150 hover:border-[#0EA5A8] hover:translate-x-1">
+            <div class="shrink-0 w-7 h-7 rounded-full bg-[#E3F6F4] text-[#0C8C8F] flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h5 class="text-[0.98rem] font-semibold text-[#0B1E33] mb-0.5">Specialist Deployment Alignment</h5>
+              <p class="text-[0.88rem] text-[#7C8A9B]">Direct point-to-point routing logic syncs severe patient workflows instantly to our leading critical-care staff.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-white py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="max-w-[640px] mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0C8C8F] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_#E3F6F4]">
+          Clinical Capabilities
+        </div>
+        <h2 class="font-['Fraunces'] font-semibold text-[#0B1E33] leading-[1.15] tracking-[-0.01em] text-3xl">Comprehensive Medical Infrastructure</h2>
+        <p class="text-[#7C8A9B] text-[1.05rem] mt-4">Specialized medical units configured to deliver reliable outcomes under a unified performance metric framework.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-[#F7F8FA] border border-[#EEF1F4] rounded-[14px] p-10 px-4 text-center group hover:translate-y-[-6px] hover:shadow-md hover:border-transparent hover:bg-white transition-all duration-[320px] ease-[cubic-bezier(0.4,0,0.2,1)]">
+          <div class="w-[52px] h-[52px] rounded-[8px] bg-[#0B1E33] text-[#0EA5A8] flex items-center justify-center mx-auto mb-6 transition-all duration-[320px] group-hover:bg-[#0EA5A8] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5M12 2a5 5 0 100 10 5 5 0 000-10z"/></svg>
+          </div>
+          <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.15rem] mb-2">Cardiology Diagnostic</h3>
+          <p class="text-[0.9rem] text-[#7C8A9B] mb-4">Precision monitoring of complex ventricular telemetry using multi-lead arrays.</p>
+          <a href="#" class="text-[0.85rem] font-semibold text-[#0C8C8F] inline-flex items-center gap-[0.3rem] transition-all duration-150 group-hover:gap-[0.55rem]">
+            Review Blueprint <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-[#F7F8FA] border border-[#EEF1F4] rounded-[14px] p-10 px-4 text-center group hover:translate-y-[-6px] hover:shadow-md hover:border-transparent hover:bg-white transition-all duration-[320px] ease-[cubic-bezier(0.4,0,0.2,1)]">
+          <div class="w-[52px] h-[52px] rounded-[8px] bg-[#0B1E33] text-[#0EA5A8] flex items-center justify-center mx-auto mb-6 transition-all duration-[320px] group-hover:bg-[#0EA5A8] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.15rem] mb-2">Neurology Unit</h3>
+          <p class="text-[0.9rem] text-[#7C8A9B] mb-4">High-fidelity analysis of structural neural pathways and baseline reflex response paths.</p>
+          <a href="#" class="text-[0.85rem] font-semibold text-[#0C8C8F] inline-flex items-center gap-[0.3rem] transition-all duration-150 group-hover:gap-[0.55rem]">
+            Review Blueprint <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-[#F7F8FA] border border-[#EEF1F4] rounded-[14px] p-10 px-4 text-center group hover:translate-y-[-6px] hover:shadow-md hover:border-transparent hover:bg-white transition-all duration-[320px] ease-[cubic-bezier(0.4,0,0.2,1)]">
+          <div class="w-[52px] h-[52px] rounded-[8px] bg-[#0B1E33] text-[#0EA5A8] flex items-center justify-center mx-auto mb-6 transition-all duration-[320px] group-hover:bg-[#0EA5A8] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 10h-2v2h-2v-2H9v-2h2V9h2v2h2v2z"/></svg>
+          </div>
+          <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.15rem] mb-2">Pediatric Care</h3>
+          <p class="text-[0.9rem] text-[#7C8A9B] mb-4">Dedicated diagnostic protocols optimized exclusively for adolescent developmental tracking.</p>
+          <a href="#" class="text-[0.85rem] font-semibold text-[#0C8C8F] inline-flex items-center gap-[0.3rem] transition-all duration-150 group-hover:gap-[0.55rem]">
+            Review Blueprint <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-[#F7F8FA] border border-[#EEF1F4] rounded-[14px] p-10 px-4 text-center group hover:translate-y-[-6px] hover:shadow-md hover:border-transparent hover:bg-white transition-all duration-[320px] ease-[cubic-bezier(0.4,0,0.2,1)]">
+          <div class="w-[52px] h-[52px] rounded-[8px] bg-[#0B1E33] text-[#0EA5A8] flex items-center justify-center mx-auto mb-6 transition-all duration-[320px] group-hover:bg-[#0EA5A8] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>
+          </div>
+          <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.15rem] mb-2">Surgical Integration</h3>
+          <p class="text-[0.9rem] text-[#7C8A9B] mb-4">High-precision modern clean-theatre facilities configured for minimally invasive intervention.</p>
+          <a href="#" class="text-[0.85rem] font-semibold text-[#0C8C8F] inline-flex items-center gap-[0.3rem] transition-all duration-150 group-hover:gap-[0.55rem]">
+            Review Blueprint <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctors" class="py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="max-w-[640px] mb-16">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0C8C8F] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_#E3F6F4]">
+          Medical Staff
+        </div>
+        <h2 class="font-['Fraunces'] font-semibold text-[#0B1E33] leading-[1.15] tracking-[-0.01em] text-3xl">Active Attending Specialists</h2>
+        <p class="text-[#7C8A9B] text-[1.05rem] mt-4">Certified clinical physicians directly assigned to active diagnostic oversight loops.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-[14px] overflow-hidden border border-[#EEF1F4] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-[320ms]">
+          <div class="h-[220px] bg-gradient-to-br from-[#E3F6F4] to-[#EEF1F4] flex items-center justify-center text-[#0C8C8F] relative">
+            <svg class="w-16 h-16 opacity-55" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            <div class="absolute top-[0.85rem] right-[0.85rem] bg-white font-['JetBrains_Mono'] text-[0.68rem] py-1 px-2.5 rounded-full text-[#16A34A] flex items-center gap-1.5 shadow-sm before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#16A34A]">
+              ON CALL
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.05rem] mb-0.5">Dr. Evelyn Vance</h3>
+            <span class="font-['JetBrains_Mono'] text-[0.78rem] text-[#0C8C8F] tracking-[0.02em] mb-4 block">CARDIOLOGY — FACC</span>
+            <a href="#appointment" class="w-full inline-flex items-center justify-center gap-2 font-semibold text-[0.85rem] px-[1.15rem] py-[0.55rem] rounded-[8px] bg-transparent text-[#0B1E33] border-[1.5px] border-[#D7DEE5] hover:border-[#0B1E33] hover:-translate-y-0.5 transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap">Route Case</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[14px] overflow-hidden border border-[#EEF1F4] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-[320ms]">
+          <div class="h-[220px] bg-gradient-to-br from-[#E3F6F4] to-[#EEF1F4] flex items-center justify-center text-[#0C8C8F] relative">
+            <svg class="w-16 h-16 opacity-55" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            <div class="absolute top-[0.85rem] right-[0.85rem] bg-white font-['JetBrains_Mono'] text-[0.68rem] py-1 px-2.5 rounded-full text-[#16A34A] flex items-center gap-1.5 shadow-sm before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#16A34A]">
+              ON CALL
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] text-[1.05rem] mb-0.5">Dr. Marcus Sterling</h3>
+            <span class="font-['JetBrains_Mono'] text-[0.78rem] text-[#0C8C8F] tracking-[0.02em] mb-4 block">NEUROLOGY — MD</span>
+            <a href="#appointment" class="w-full inline-flex items-center justify-center gap-2 font-semibold text-[0.85rem] px-[1.15rem] py-[0.55rem] rounded-[8px] bg-transparent text-[#0B1E33] border-[1.5px] border-[#D7DEE5] hover:border-[#0B1E33] hover:-translate-y-0.5 transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap">Route Case</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#0B1E33] text-white py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="max-w-[640px] mb-16">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0EA5A8] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_rgba(14,165,168,0.25)]">
+          Routing Nodes
+        </div>
+        <h2 class="font-['Fraunces'] font-semibold text-white leading-[1.15] tracking-[-0.01em] text-3xl">Internal Care Routing Hubs</h2>
+        <p class="text-[#AAB9C9] text-[1.05rem] mt-4">Direct processing nodes configuration. Select target destination to review latency.</p>
+      </div>
+
+      <div class="grid border-t border-white/12">
+        <div class="grid grid-cols-[1fr] md:grid-cols-[90px_1fr_1.4fr_140px] items-center gap-4 py-6 border-b border-white/12 hover:bg-white/4 transition-colors duration-150">
+          <div class="font-['JetBrains_Mono'] text-[#0EA5A8] text-[0.85rem]">NODE_01</div>
+          <h3 class="font-['Fraunces'] font-semibold text-white text-[1.15rem]">Critical Trauma Architecture</h3>
+          <p class="text-[#8FA0B3] text-[0.92rem] m-0">Primary emergency ingestion array routing optimized for extreme systemic threat stabilization.</p>
+          <a href="#" class="md:justify-self-end inline-flex items-center justify-center gap-2 font-semibold text-[0.85rem] px-[1.15rem] py-[0.55rem] rounded-[8px] bg-white text-[#0B1E33] hover:bg-[#E3F6F4] hover:-translate-y-0.5 transition-all duration-150 whitespace-nowrap">View Protocol</a>
+        </div>
+
+        <div class="grid grid-cols-[1fr] md:grid-cols-[90px_1fr_1.4fr_140px] items-center gap-4 py-6 border-b border-white/12 hover:bg-white/4 transition-colors duration-150">
+          <div class="font-['JetBrains_Mono'] text-[#0EA5A8] text-[0.85rem]">NODE_02</div>
+          <h3 class="font-['Fraunces'] font-semibold text-white text-[1.15rem]">Outpatient Diagnostic Matrix</h3>
+          <p class="text-[#8FA0B3] text-[0.92rem] m-0">Systematic health testing workflows, preventative imaging arrays, and general biometrics.</p>
+          <a href="#" class="md:justify-self-end inline-flex items-center justify-center gap-2 font-semibold text-[0.85rem] px-[1.15rem] py-[0.55rem] rounded-[8px] bg-white text-[#0B1E33] hover:bg-[#E3F6F4] hover:-translate-y-0.5 transition-all duration-150 whitespace-nowrap">View Protocol</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment" class="bg-[#E3F6F4] py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="bg-white rounded-[22px] shadow-2xl grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] overflow-hidden">
+        
+        <div class="bg-[#0B1E33] bg-[radial-gradient(circle_at_20%_90%,rgba(14,165,168,0.25),transparent_55%)] text-white p-10 lg:p-16">
+          <h2 class="font-['Fraunces'] font-semibold text-white text-[1.9rem] mb-2">Access Secure Patient Portal</h2>
+          <p class="text-[#AAB9C9] text-[0.95rem] mb-10">Initialize booking parameters below. All data fields undergo secure end-to-end medical encryption processing pipelines.</p>
+          
+          <div class="flex gap-[0.85rem] mb-6 items-start">
+            <div class="shrink-0 w-7 h-7 rounded-full bg-[#0EA5A8]/20 text-[#0EA5A8] flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h5 class="text-white text-[0.95rem] font-semibold mb-0.5">Automated Assignment System</h5>
+              <p class="text-[#8FA0B3] text-[0.85rem]">The engine matches chosen configurations to available active attending physician timelines dynamically.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="p-10 lg:p-16">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-[0.82rem] font-semibold text-[#122B47]">LEGAL FULL NAME</label>
+              <input type="text" placeholder="John Doe" class="border-[1.5px] border-[#D7DEE5] rounded-[8px] p-[0.78rem_0.9rem] bg-[#F7F8FA] text-[#1C2B3A] transition-all duration-150 hover:border-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white focus:shadow-[0_0_0_4px_#E3F6F4]">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[0.82rem] font-semibold text-[#122B47]">EMAIL ADDRESS</label>
+              <input type="email" placeholder="john@example.com" class="border-[1.5px] border-[#D7DEE5] rounded-[8px] p-[0.78rem_0.9rem] bg-[#F7F8FA] text-[#1C2B3A] transition-all duration-150 hover:border-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white focus:shadow-[0_0_0_4px_#E3F6F4]">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[0.82rem] font-semibold text-[#122B47]">TARGET CLINICAL NODE</label>
+              <select class="border-[1.5px] border-[#D7DEE5] rounded-[8px] p-[0.78rem_0.9rem] bg-[#F7F8FA] text-[#1C2B3A] transition-all duration-150 hover:border-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white focus:shadow-[0_0_0_4px_#E3F6F4]">
+                <option>Cardiology Unit Diagnostic</option>
+                <option>Neurology Specialty Hub</option>
+                <option>General Trauma Center</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[0.82rem] font-semibold text-[#122B47]">PREFERRED CLINICAL DATE</label>
+              <input type="date" class="border-[1.5px] border-[#D7DEE5] rounded-[8px] p-[0.78rem_0.9rem] bg-[#F7F8FA] text-[#1C2B3A] transition-all duration-150 hover:border-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white focus:shadow-[0_0_0_4px_#E3F6F4]">
+            </div>
+            <div class="flex flex-col gap-2 sm:col-span-2">
+              <label class="text-[0.82rem] font-semibold text-[#122B47]">SYMPTOM LOG AND HISTORY ANALYSIS</label>
+              <textarea placeholder="Provide detailed operational baseline logs..." class="border-[1.5px] border-[#D7DEE5] rounded-[8px] p-[0.78rem_0.9rem] bg-[#F7F8FA] text-[#1C2B3A] transition-all duration-150 hover:border-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white focus:shadow-[0_0_0_4px_#E3F6F4] resize-vertical min-height-[100px] font-inherit"></textarea>
+            </div>
+          </div>
+          <div class="mt-6">
+            <button type="submit" class="inline-flex items-center justify-center gap-2 font-semibold text-[0.95rem] p-[0.95rem_2rem] rounded-[8px] bg-[#0EA5A8] text-white shadow-sm hover:bg-[#0C8C8F] hover:-translate-y-0.5 hover:shadow-md transition-all duration-150 whitespace-nowrap">
+              Transmit Admission Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="bg-white rounded-[22px] border border-[#EEF1F4] shadow-sm overflow-hidden">
+        <div class="flex justify-between items-center flex-wrap gap-4 p-6 lg:px-10 border-b border-[#EEF1F4]">
+          <h3 class="font-['Fraunces'] font-semibold text-[#0B1E33] leading-[1.15] tracking-[-0.01em] text-[1.2rem]">Live Ingestion Ledger</h3>
+          <div class="inline-flex items-center gap-1.5 text-[#0C8C8F] font-['JetBrains_Mono'] text-[0.75rem]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#0C8C8F] animate-pulse"></span> LEDGER_ACTIVE
+          </div>
+        </div>
+
+        <div class="overflow-x-auto scrolling-touch">
+          <table class="w-full border-collapse min-w-[640px]">
+            <thead>
+              <tr class="bg-[#F7F8FA]">
+                <th class="text-left font-['JetBrains_Mono'] text-[0.72rem] tracking-[0.06em] uppercase text-[#7C8A9B] p-3.5 lg:px-10 border-b border-[#EEF1F4] whitespace-nowrap">IDENTIFIER</th>
+                <th class="text-left font-['JetBrains_Mono'] text-[0.72rem] tracking-[0.06em] uppercase text-[#7C8A9B] p-3.5 lg:px-10 border-b border-[#EEF1F4] whitespace-nowrap">PATIENT NODE</th>
+                <th class="text-left font-['JetBrains_Mono'] text-[0.72rem] tracking-[0.06em] uppercase text-[#7C8A9B] p-3.5 lg:px-10 border-b border-[#EEF1F4] whitespace-nowrap">ASSIGNED DEPT</th>
+                <th class="text-left font-['JetBrains_Mono'] text-[0.72rem] tracking-[0.06em] uppercase text-[#7C8A9B] p-3.5 lg:px-10 border-b border-[#EEF1F4] whitespace-nowrap">STATUS LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-[#F7F8FA] transition-colors duration-150">
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] font-['JetBrains_Mono'] text-[#7C8A9B] text-[0.85rem] whitespace-nowrap">#MR-0982</td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">
+                  <div class="flex items-center gap-[0.7rem] font-semibold text-[#0B1E33]">
+                    <div class="w-8 h-8 rounded-full bg-[#E3F6F4] text-[#0C8C8F] flex items-center justify-center font-['JetBrains_Mono'] text-[0.78rem] font-semibold shrink-0">AA</div>
+                    <span>Alice Arkwright</span>
+                  </div>
+                </td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">Cardiology Diagnostic Panel</td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">
+                  <span class="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold p-[0.32rem_0.75rem] rounded-full bg-[#E7F7ED] text-[#16A34A] before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#16A34A]">COMPLETED</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-[#F7F8FA] transition-colors duration-150">
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] font-['JetBrains_Mono'] text-[#7C8A9B] text-[0.85rem] whitespace-nowrap">#MR-0411</td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">
+                  <div class="flex items-center gap-[0.7rem] font-semibold text-[#0B1E33]">
+                    <div class="w-8 h-8 rounded-full bg-[#E3F6F4] text-[#0C8C8F] flex items-center justify-center font-['JetBrains_Mono'] text-[0.78rem] font-semibold shrink-0">TB</div>
+                    <span>Tristan Bradley</span>
+                  </div>
+                </td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">Neurology Metric Screening</td>
+                <td class="p-4 lg:px-10 border-b border-[#EEF1F4] text-[0.92rem] whitespace-nowrap">
+                  <span class="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold p-[0.32rem_0.75rem] rounded-full bg-[#FEF3E0] text-[#F59E0B] before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#F59E0B]">PENDING LAB</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#0B1E33] text-white py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="max-w-[640px] mb-16">
+        <div class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-[0.78rem] font-medium tracking-[0.08em] uppercase text-[#0EA5A8] mb-4 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#0EA5A8] before:shadow-[0_0_0_3px_rgba(14,165,168,0.25)]">
+          Case Reviews
+        </div>
+        <h2 class="font-['Fraunces'] font-semibold text-white leading-[1.15] tracking-[-0.01em] text-3xl">System Verification Reports</h2>
+        <p class="text-[#AAB9C9] text-[1.05rem] mt-4">Verified outcomes logged directly by validated care recipients.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-[#122B47] border border-white/10 rounded-[14px] p-10 flex flex-col gap-6">
+          <div class="flex gap-1 text-[#0EA5A8]">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <blockquote class="font-['Fraunces'] text-[1.05rem] font-normal italic text-[#E7ECF1] leading-[1.55]">
+            "The localized node framework expedited my cardiology diagnostic review effortlessly. Absolute structural precision."
+          </blockquote>
+          <div class="flex items-center gap-[0.8rem] mt-auto">
+            <div class="w-[38px] h-[38px] rounded-full bg-[#14A5A8]/18 text-[#0EA5A8] flex items-center justify-center font-['JetBrains_Mono'] text-[0.78rem] font-semibold shrink-0">H</div>
+            <div>
+              <strong class="block text-white text-[0.92rem]">Helena Vance</strong>
+              <span class="text-[0.78rem] text-[#8FA0B3]">Outpatient #8841</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-16">
+      <div class="flex flex-col gap-6">
+        <div class="contact-item class flex gap-4 items-start">
+          <div class="w-11 h-11 bg-[#0B1E33] text-[#0EA5A8] rounded-[8px] flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h5 class="text-[0.95rem] font-semibold text-[#0B1E33] mb-1">Central Physical Terminal</h5>
+            <p class="text-[0.9rem] text-[#7C8A9B]">742 Diagnostic Parkway, Core Cluster 4</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full min-h-[340px] bg-gradient-to-b from-[#0B1E33]/5 to-[#0B1E33]/5 relative flex items-center justify-center border border-[#D7DEE5] rounded-[22px] bg-[repeating-linear-gradient(0deg,rgba(11,30,51,0.06)_0_1px,transparent_1px_32px),repeating-linear-gradient(90deg,rgba(11,30,51,0.06)_0_1px,transparent_1px_32px)] bg-[#E3F6F4]">
+        <div class="w-[46px] h-[46px] bg-[#0B1E33] text-white rounded-t-full rounded-bl-full -rotate-45 flex items-center justify-center shadow-md">
+          <svg class="rotate-45 w-5 h-5 text-[#0EA5A8]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <div class="absolute bottom-6 left-6 bg-white p-[0.6rem_0.9rem] rounded-[8px] text-[0.82rem] shadow-sm font-semibold text-[#0B1E33]">
+          HQ_COORD: 45.91N, 12.02W
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#0B1E33] text-[#AAB9C9] pt-24">
+    <div class="w-full max-w-[1240px] mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] gap-10 pb-16 border-b border-white/10">
+        <div>
+          <a href="#" class="flex items-center gap-[0.6rem] font-['Fraunces'] font-bold text-[1.35rem] text-white shrink-0 mb-4">
+            <div class="w-[34px] h-[34px] rounded-[9px] bg-white/10 text-[#0EA5A8] flex items-center justify-center shrink-0">
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <span>Meridian Health</span>
+          </a>
+          <p class="text-[0.9rem] leading-relaxed max-w-[300px]">Systematic healthcare architecture built with programmatic performance criteria.</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-['Inter'] text-[0.92rem] font-semibold mb-6">Medical Anchors</h4>
+          <ul class="flex flex-col gap-[0.7rem]">
+            <li><a href="#" class="text-[0.88rem] hover:text-[#0EA5A8] transition-colors duration-150">Node Directory</a></li>
+            <li><a href="#" class="text-[0.88rem] hover:text-[#0EA5A8] transition-colors duration-150">Staff Schedules</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-['Inter'] text-[0.92rem] font-semibold mb-6">Legal Handshakes</h4>
+          <ul class="flex flex-col gap-[0.7rem]">
+            <li><a href="#" class="text-[0.88rem] hover:text-[#0EA5A8] transition-colors duration-150">Privacy Matrix</a></li>
+            <li><a href="#" class="text-[0.88rem] hover:text-[#0EA5A8] transition-colors duration-150">Encryption Audits</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-['Inter'] text-[0.92rem] font-semibold mb-6">Clinical Telemetry Stream</h4>
+          <form class="flex gap-2 mt-2">
+            <input type="email" placeholder="Secured payload destination..." class="flex-1 p-[0.7rem_0.9rem] rounded-[8px] border border-white/18 bg-white/6 text-white text-[0.88rem] placeholder-[#7C8A9B] focus:outline-none focus:border-[#0EA5A8] focus:bg-white/10">
+            <button type="submit" class="bg-[#0EA5A8] text-white p-[0.7rem_1rem] rounded-[8px] shrink-0 hover:bg-[#0C8C8F] transition-colors duration-150">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4Z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center flex-wrap gap-4 py-6 pb-10 text-[0.82rem]">
+        <span>© 2026 Meridian Health Group. All rights reserved.</span>
+        <div class="flex gap-[0.6rem]">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-[#0EA5A8] hover:-translate-y-0.5 transition-all duration-150 text-white">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter/X" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-[#0EA5A8] hover:-translate-y-0.5 transition-all duration-150 text-white">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4 4 20"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
