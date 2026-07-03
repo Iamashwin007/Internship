@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex justify-center items-center bg-gray-900">
+
+    <div class="w-80 bg-gray-800 rounded-2xl shadow-2xl p-5">
+
+        <h2 class="text-center text-white text-2xl font-bold mb-5">
+            Simple Calculator
+        </h2>
+
+        <!-- Display -->
+        <input
+            type="text"
+            id="display"
+            readonly
+            placeholder="0"
+            class="w-full h-16 mb-5 rounded-lg bg-black text-green-400 text-right text-3xl px-4 outline-none"
+        >
+
+        <!-- Buttons -->
+        <div class="grid grid-cols-4 gap-3">
+
+            <button onclick="clearDisplay()" class="bg-red-500 hover:bg-red-600 text-white h-14 rounded-lg font-semibold">AC</button>
+
+            <button onclick="backspace()" class="bg-yellow-500 hover:bg-yellow-600 text-white h-14 rounded-lg">⌫</button>
+
+            <button onclick="appendToDisplay('%')" class="bg-blue-500 hover:bg-blue-600 text-white h-14 rounded-lg">%</button>
+
+            <button onclick="appendToDisplay('/')" class="bg-orange-500 hover:bg-orange-600 text-white h-14 rounded-lg">/</button>
+
+            <button onclick="appendToDisplay('7')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">7</button>
+
+            <button onclick="appendToDisplay('8')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">8</button>
+
+            <button onclick="appendToDisplay('9')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">9</button>
+
+            <button onclick="appendToDisplay('*')" class="bg-orange-500 hover:bg-orange-600 text-white h-14 rounded-lg">*</button>
+
+            <button onclick="appendToDisplay('4')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">4</button>
+
+            <button onclick="appendToDisplay('5')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">5</button>
+
+            <button onclick="appendToDisplay('6')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">6</button>
+
+            <button onclick="appendToDisplay('-')" class="bg-orange-500 hover:bg-orange-600 text-white h-14 rounded-lg">-</button>
+
+            <button onclick="appendToDisplay('1')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">1</button>
+
+            <button onclick="appendToDisplay('2')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">2</button>
+
+            <button onclick="appendToDisplay('3')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">3</button>
+
+            <button onclick="appendToDisplay('+')" class="bg-orange-500 hover:bg-orange-600 text-white h-14 rounded-lg">+</button>
+
+            <button onclick="appendToDisplay('0')" class="col-span-2 bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">0</button>
+
+            <button onclick="appendToDisplay('.')" class="bg-gray-700 hover:bg-gray-600 text-white h-14 rounded-lg">.</button>
+
+            <button onclick="calculate()" class="bg-green-500 hover:bg-green-600 text-white h-14 rounded-lg font-bold">=</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        const display = document.getElementById("display");
+
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function backspace() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                display.value = "Error";
+            }
+        }
+    </script>
+
+</body>
+</html>
